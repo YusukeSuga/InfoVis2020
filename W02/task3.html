@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <title>W02: Task 3</title>
+  </head>
+  <body>
+    <script src = "vec3.js"></script>
+    <form id = "form1" action = "#">
+      Vertice1<br>
+      x : <input type = "number" id="input_x1" value="0">
+      y : <input type = "number" id="input_y1" value="0">
+      z : <input type = "number" id="input_z1" value="0">
+      <input type = "button" onclick="func1()" value="change">
+      <br>
+      Vertice2<br>
+      x : <input type = "number" id="input_x2" value="0">
+      y : <input type = "number" id="input_y2" value="0">
+      z : <input type = "number" id="input_z2" value="0">
+      <input type = "button" onclick="func2()" value="change">
+      <br>
+      Vertice3<br>
+      x : <input type = "number" id="input_x3" value="0">
+      y : <input type = "number" id="input_y3" value="0">
+      z : <input type = "number" id="input_z3" value="0">
+      <input type = "button" onclick="func3()" value="change">
+      <br>
+      <input type = "button" onclick="areaculc()" value="Area">
+    </form>
+    <div id="output_v1"></div>
+    <div id="output_v2"></div>
+    <div id="output_v3"></div>
+    <br>
+    <div id="output_area"></div>
+    <script>
+      var v1 = new Vec3(0,0,0);
+      var v2 = new Vec3(0,0,0);
+      var v3 = new Vec3(0,0,0);
+      function func1(){
+	  var input_x1 = document.getElementById("input_x1").value;
+	  var input_y1 = document.getElementById("input_y1").value;
+	  var input_z1 = document.getElementById("input_z1").value;
+	  v1.x = input_x1;
+	  v1.y = input_y1;
+	  v1.z = input_z1;
+	  document.getElementById("output_v1").innerHTML = "Vertice1 : (" + input_x1 + ", " + input_y1 + ", " + input_z1 + ")";
+      }
+      function func2(){
+	  var input_x2 = document.getElementById("input_x2").value;
+	  var input_y2 = document.getElementById("input_y2").value;
+	  var input_z2 = document.getElementById("input_z2").value;
+	  v2.x = input_x2;
+	  v2.y = input_y2;
+	  v2.z = input_z2;
+	  document.getElementById("output_v2").innerHTML = "Vertice2 : (" + input_x2 + ", " + input_y2 + ", " + input_z2 + ")";
+      }
+      function func3(){
+	  var input_x3 = document.getElementById("input_x3").value;
+	  var input_y3 = document.getElementById("input_y3").value;
+	  var input_z3 = document.getElementById("input_z3").value;
+	  v3.x = input_x3;
+	  v3.y = input_y3;
+	  v3.z = input_z3;
+	  document.getElementById("output_v3").innerHTML = "Vertice3 : (" + input_x3 + ", " + input_y3 + ", " + input_z3 + ")";
+      }
+      function areaculc(){
+	  var v1_x = v2.x - v1.x, v1_y = v2.y - v1.y,  v1_z = v2.z - v1.z;
+	  var v2_x = v3.x - v1.x, v2_y = v3.y - v1.y,  v2_z = v3.z - v1.z;
+	  var c1 = v1_y * v2_z - v1_z * v2_y;
+	  var c2 = v1_z * v2_x - v1_x * v2_z;
+	  var c3 = v1_x * v2_y - v1_y * v2_x;
+	  c1 = Math.pow(c1,2);
+	  c2 = Math.pow(c2,2);
+	  c3 = Math.pow(c3,2);
+	  var S = Math.sqrt(c1+c2+c3)/2;
+	  document.getElementById("output_area").innerHTML = "Area : " + S;
+      }
+    </script>
+  </body>
+</html>
