@@ -9,7 +9,7 @@
 <div id="my_dataviz"></div>
 
 X data : country name<br>
-Y data : The number of world heritages
+Y data : the number of world heritages
 
 <script>
 
@@ -29,7 +29,7 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 // Parse the Data
-  d3.csv("7_OneCatOneNum_header.csv", function(data) {
+  d3.csv("https://yusukesuga.github.io/InfoVis2020/W12/data.csv", function(data) {
 
 // X axis
 var x = d3.scaleBand()
@@ -45,7 +45,7 @@ svg.append("g")
 
 // Add Y axis
 var y = d3.scaleLinear()
-  .domain([0, 100])
+  .domain([0, 60])
   .range([ height, 0]);
 svg.append("g")
   .call(d3.axisLeft(y));
