@@ -41,7 +41,7 @@ function main()
 	var ka_value = KVS.Mix( 0, 100, 0.5 );
 	var kd_value = KVS.Mix( 0, 100, 0.5 );
 	var ks_value = KVS.Mix( 0, 100, 0.5 );
-	var n_value = KVS.Mix( 0, 200, 0.5 );
+	var n_value = KVS.Mix( 0, 200, 0.25 );
 
         document.getElementById('label_iso').innerHTML = "Isovalue: " + Math.round( isovalue ) + "<br>";
         document.getElementById('label_col').innerHTML = "Color: " + Math.round( mat_color )+ "<br>";
