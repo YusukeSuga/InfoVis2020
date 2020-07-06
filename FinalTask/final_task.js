@@ -19,7 +19,7 @@ function main()
     var sw_ref = 0;       //0:Lambertian  1:Phong
 
     screen.init(volume, {
-        width: window.innerWidth * 0.6,
+        width: document.getElementById('display').clientWidth * 0.9,
         height: window.innerHeight,
         targetDom: document.getElementById('display'),
         enableAutoResize: false
